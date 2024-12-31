@@ -44,6 +44,17 @@ for e in cars:
     print(e, end=" / ")
 print()
 
-# 범위 기반 for로 cars 출력하기
-for i in cars[:3]:
-    print(i)
+print("< 범위 기반 for로 cars 출력하기 >")
+for i in range(0, len(cars)): ## 시퀀스형(리스트, 튜플, 문자열, 입력)
+    print(cars[i], end=" / ")
+print()
+print()
+
+# CSV 파일 : Comma Separated Values, 콤마로 구분된 텍스트 형태의 파일
+import csv
+f = open("output.csv", "w", encoding="utf-8", newline="") ## newline="": 줄바꿈 안넣겠다.
+wr = csv.writer(f)
+wr.writerow([1, "안유진", "서울시 강남구 삼성동", "리더"])
+wr.writerow([2, "장원영", "서울시 강남구 역삼동", "센터"])
+wr.writerow([3, "이서", "서울시 강남구 신사동", "막내"])
+f.close()
